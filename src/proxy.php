@@ -1,4 +1,8 @@
 <?php
+/**
+* this proxy show a lazy loading exemple
+* The ProcessProxy only make the heavy method on demand
+*/
 Interface ProcessInterface
 {
     public function process();
