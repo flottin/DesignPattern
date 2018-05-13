@@ -8,6 +8,7 @@ class Program
     $subject->add(new Observer1());
     $subject->add(new Observer1());
     $subject->add(new Observer2());
+    $subject->add(new Observer1());
 
     while (true)
     {
@@ -24,9 +25,9 @@ class Program
 
 $p = new Program();
 
-
-
-
+/**
+* the subject observed
+*/
 class Subject
 {
   private $observers = [];
@@ -53,12 +54,17 @@ class Subject
   }
 }
 
-
+/**
+* The observer abstract
+*/
 abstract class Observer
 {
   public function notify($msg){}
 }
 
+/**
+* a concrete observer
+*/
 class Observer1 extends Observer
 {
   public function notify($msg)
@@ -67,6 +73,9 @@ class Observer1 extends Observer
   }
 }
 
+/**
+* an other concrete observer
+*/
 class Observer2 extends Observer
 {
   public function notify($msg)
